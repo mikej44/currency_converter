@@ -1,6 +1,6 @@
 {
-//kalkulacja kwoty PLN na wybraną walutę
-//zadeklarowane waluty wykorzystuję również w pozostałych sposobach kalkulacji, dlatego są zadeklarowane globalnie    
+    //kalkulacja kwoty PLN na wybraną walutę
+    //zadeklarowane waluty wykorzystuję również w pozostałych sposobach kalkulacji, dlatego są zadeklarowane globalnie    
     const EUR = 4.55;
     const USD = 3.77;
     const CHF = 4.13;
@@ -56,8 +56,8 @@
 
     resetRadio();
 
-//kalkulacja kwoty PLN na wybrane kilka walut 
-//stałe "result" wykorzystuje zarówno w kalkulacji, jak i w resecie, dlatego są zadeklarowane globalnie   
+    //kalkulacja kwoty PLN na wybrane kilka walut 
+    //stałe "result" wykorzystuje zarówno w kalkulacji, jak i w resecie, dlatego są zadeklarowane globalnie   
     const noResult = document.querySelector(".js-checkboxNoResult");
     const resultEUR = document.querySelector(".js-checkboxResultEUR");
     const resultUSD = document.querySelector(".js-checkboxResultUSD");
@@ -118,72 +118,78 @@
 
     initCheckbox();
 
-//kalkulacja wybranej waluty na wybraną walutę
-    let formfull = document.querySelector(".js-formFull");
-    let formFull__Input = document.querySelector(".js-formFull__RadioInput");
-    let radioResultFull = document.querySelector(".js-radioResultFull")
-    let resetFull = document.querySelector(".js-resetFull");
+    //kalkulacja wybranej waluty na wybraną walutę
 
+    const radioResultFull = document.querySelector(".js-radioResultFull")
 
+    const calculationFull = (input) => {
 
-    formfull.addEventListener("submit", (event) => {
-        event.preventDefault();
-
-        let input = formFull__Input.value;
-        let EURUSD = EUR / USD;
-        let EURCHF = EUR / CHF;
-        let USDCHF = USD / CHF;
-        let FormCurrRadioIn = document.querySelector(".js-ItemIn:checked");
-        let FormCurrRadioOut = document.querySelector(".js-ItemOut:checked");
-        let currRadioIn = FormCurrRadioIn.value;
-        let currRadioOut = FormCurrRadioOut.value;
+        const EURUSD = EUR / USD;
+        const EURCHF = EUR / CHF;
+        const USDCHF = USD / CHF;
+        const FormCurrRadioIn = document.querySelector(".js-ItemIn:checked");
+        const currRadioIn = FormCurrRadioIn.value;
+        const FormCurrRadioOut = document.querySelector(".js-ItemOut:checked");
+        const currRadioOut = FormCurrRadioOut.value;
 
         if (currRadioIn === currRadioOut) {
-            radioResultFull.innerText = "1";
+            radioResultFull.innerText = `1 ${currRadioOut}`;
         } else {
             switch (currRadioIn) {
                 case "EUR":
                     switch (currRadioOut) {
                         case "USD":
-                            let resultEURUSD = input * EURUSD;
-                            radioResultFull.innerText = `Wynik: ${resultEURUSD.toFixed(2)} USD`;
-                            break;
+                            return input * EURUSD;
                         case "CHF":
-                            let resultEURCHF = input * EURCHF;
-                            radioResultFull.innerText = `Wynik: ${resultEURCHF.toFixed(2)} CHF`;
-                            break;
+                            return input * EURCHF;
                     } break;
                 case "USD":
                     switch (currRadioOut) {
                         case "EUR":
-                            let resultUSDEUR = input / EURUSD;
-                            radioResultFull.innerText = `Wynik: ${resultUSDEUR.toFixed(2)} EUR`;
-                            break;
+                            return input / EURUSD;
                         case "CHF":
-                            let resultUSDCHF = input * USDCHF;
-                            radioResultFull.innerText = `Wynik: ${resultUSDCHF.toFixed(2)} CHF`;
-                            break;
+                            return input * USDCHF;
                     } break;
                 case "CHF":
                     switch (currRadioOut) {
                         case "USD":
-                            let resultCHFUSD = input / EURUSD;
-                            radioResultFull.innerText = `Wynik: ${resultCHFUSD.toFixed(2)} USD`;
-                            break;
+                            return input / EURUSD;
                         case "EUR":
-                            let resultCHFEUR = input / EURCHF;
-                            radioResultFull.innerText = `Wynik: ${resultCHFEUR.toFixed(2)} EUR`;
-                            break;
+                            return input / EURCHF;
                     } break;
-                default:
-                    radioResultFull.innerText = "wybierz waluty";
             }
         }
-    })
+    }
 
-    resetFull.addEventListener("click", () => {
-        radioResultFull.innerText = "";
-    })
+    const initFull = () => {
+        const formfull = document.querySelector(".js-formFull");
+
+        formfull.addEventListener("submit", (event) => {
+            event.preventDefault();
+
+            const formFull__Input = document.querySelector(".js-formFull__RadioInput");
+            const input = formFull__Input.value;
+            const FormCurrRadioOut = document.querySelector(".js-ItemOut:checked");
+            const currRadioOut = FormCurrRadioOut.value;
+
+            let finalResult = calculationFull(input);
+
+            radioResultFull.innerText = `Wynik: ${finalResult.toFixed(2)} ${currRadioOut}`;
+        })
+    }
+
+    initFull();
+
+    const resetFull = () => {
+        const resetFull = document.querySelector(".js-resetFull");
+
+        resetFull.addEventListener("click", () => {
+            radioResultFull.innerText = "";
+        })
+    }
+
+    resetFull();
+
 }
 
 
