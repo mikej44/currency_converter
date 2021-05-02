@@ -1,18 +1,9 @@
 {
-
-    let formCheckbox = document.querySelector(".js-formCheckbox");
-
-    let resetCheckbox = document.querySelector(".js-resetCheckbox")
-
-    let boxValueEUR = document.querySelector(".js-form__CheckEUR");
-    let boxValueUSD = document.querySelector(".js-form__CheckUSD");
-    let boxValueCHF = document.querySelector(".js-form__CheckCHF");
-    let boxInput = document.querySelector(".js-form__CheckboxInput");
-    let checkboxResult = document.querySelector(".js-checkboxResult");
-    let resultEUR = document.querySelector(".js-checkboxResultEUR");
-    let resultUSD = document.querySelector(".js-checkboxResultUSD");
-    let resultCHF = document.querySelector(".js-checkboxResultCHF");
-    let noResult = document.querySelector(".js-checkboxNoResult");
+//kalkulacja kwoty PLN na wybraną walutę
+//zadeklarowane waluty wykorzystuję również w pozostałych sposobach kalkulacji, dlatego są zadeklarowane globalnie    
+    const EUR = 4.55;
+    const USD = 3.77;
+    const CHF = 4.13;
 
     const radioCalculation = (Input) => {
 
@@ -20,9 +11,6 @@
         const radioUSD = document.querySelector(".js-form__ItemUSD");
         const radioCHF = document.querySelector(".js-form__ItemCHF");
         const radioResult = document.querySelector(".js-radioResult");
-        const EUR = 4.55;
-        const USD = 3.77;
-        const CHF = 4.13;
 
         if (radioEUR.checked) {
             let result = Input / EUR
@@ -48,7 +36,7 @@
             event.preventDefault()
 
             const radioInput = document.querySelector(".js-form__RadioInput");
-            let Input = radioInput.value;
+            const Input = radioInput.value;
 
             radioCalculation(Input);
         })
@@ -56,7 +44,7 @@
 
     initRadio();
 
-    const RadioReset = () => {
+    const resetRadio = () => {
 
         const resetRadio = document.querySelector(".js-resetRadio");
 
@@ -66,12 +54,21 @@
         })
     }
 
-    RadioReset();
+    resetRadio();
 
-    formCheckbox.addEventListener("submit", (event) => {
-        event.preventDefault()
+//kalkulacja kwoty PLN na wybrane kilka walut 
+//stałe "result" wykorzystuje zarówno w kalkulacji, jak i w resecie, dlatego są zadeklarowane globalnie   
+    const noResult = document.querySelector(".js-checkboxNoResult");
+    const resultEUR = document.querySelector(".js-checkboxResultEUR");
+    const resultUSD = document.querySelector(".js-checkboxResultUSD");
+    const resultCHF = document.querySelector(".js-checkboxResultCHF");
 
-        let InputPLN = boxInput.value;
+    const checkboxCalculate = (InputPLN) => {
+
+        const boxValueEUR = document.querySelector(".js-form__CheckEUR");
+        const boxValueUSD = document.querySelector(".js-form__CheckUSD");
+        const boxValueCHF = document.querySelector(".js-form__CheckCHF");
+
         if (boxValueEUR.checked || boxValueUSD.checked || boxValueCHF.checked) {
             if (boxValueEUR.checked) {
                 let resultValueEUR = InputPLN / EUR;
@@ -89,19 +86,42 @@
         else {
             noResult.innerText = "Wybierz przynajmniej jedną walutę!"
         }
-    })
+    }
 
+    const resetCheckbox = () => {
 
-    resetCheckbox.addEventListener("click", () => {
-        resultEUR.innerText = "";
-        resultUSD.innerText = "";
-        resultCHF.innerText = "";
-        noResult.innerText = "";
-    })
+        const resetCheckbox = document.querySelector(".js-resetCheckbox");
 
+        resetCheckbox.addEventListener("click", () => {
+            resultEUR.innerText = "";
+            resultUSD.innerText = "";
+            resultCHF.innerText = "";
+            noResult.innerText = "";
+        })
+    }
+
+    resetCheckbox();
+
+    const initCheckbox = () => {
+
+        const formCheckbox = document.querySelector(".js-formCheckbox");
+
+        formCheckbox.addEventListener("submit", (event) => {
+            event.preventDefault()
+
+            const boxInput = document.querySelector(".js-form__CheckboxInput");
+            let InputPLN = boxInput.value;
+
+            checkboxCalculate(InputPLN);
+        })
+    }
+
+    initCheckbox();
+
+//kalkulacja wybranej waluty na wybraną walutę
     let formfull = document.querySelector(".js-formFull");
     let formFull__Input = document.querySelector(".js-formFull__RadioInput");
-    let radioResultFull = document.querySelector(".js-radioResultFull");
+    let radioResultFull = document.querySelector(".js-radioResultFull")
     let resetFull = document.querySelector(".js-resetFull");
 
 
