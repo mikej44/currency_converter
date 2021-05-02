@@ -1,0 +1,108 @@
+html {
+    box-sizing: border-box;
+}
+
+*, ::after, ::before {
+    box-sizing: inherit;
+}
+
+body {
+    background-image: url(https://thumbs.dreamstime.com/z/dollars-background-high-resolution-texture-pattern-one-hundred-banknotes-money-usa-photography-united-states-dollar-u-s-177338082.jpg);
+}
+
+.converter {
+    margin: 70px auto;
+    box-shadow: 0px 1px 17px 6px rgba(1, 1, 2, 0.74);
+    max-width: 500px;
+}
+
+.form {
+    margin: 0 auto;
+    max-width: 500px;
+    background-color: rgba(87, 109, 83, 0.884);
+    padding: 7px;
+}
+
+.form__Item {
+    color: white;
+    font-size: 23px;
+    display: inline-block;
+    padding: 15px;
+    font-style: oblique;
+    margin-left: 20px;
+}
+
+.form__Legend {
+    color: white;
+    padding: 10px;
+    font-weight: 200;
+    font-size: 20px;
+    font-family: 'Kanit', sans-serif;
+    margin-bottom: 1px;
+}
+
+.form__label {
+    color: rgba(235, 236, 235, 0.884);
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 42px;
+}
+
+.form__Fieldset {
+    border: 3px solid rgb(37, 37, 37);
+    border-radius: 8px;
+}
+
+.result {
+    color: white;
+    font-size: 26px;
+    font-weight: bold;
+    text-align: center;
+    display: block;
+}
+
+.form__button {
+    border-radius: 5px;
+    background-color: rgb(115, 223, 162);
+    display: inline-block;
+    padding: 8px 20px;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 3px 50px;
+    margin-left: 30px;
+}
+
+.form__RadioInput {
+    display: block;
+    width: 200px;
+    margin: 0 auto;
+}
+
+.formFull {
+    background-color: rgba(44, 39, 29, 0.815);
+}
+
+.formFull__Fieldset {
+    border-color: burlywood;
+}
+
+.formFull__input {
+    display: block;
+    text-align: center;
+    line-height: 40px;
+}
+
+.formFull__section {
+    border: 1px solid whitesmoke;
+    border-radius: 8px;
+    padding: 10px 25px;
+    color: rgb(228, 210, 210);
+    font-size: 23px;
+    font-weight: bold;
+    max-width: 300px;
+    margin: 0 auto;
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    background-color: rgba(27, 26, 26, 0.548);
+}
