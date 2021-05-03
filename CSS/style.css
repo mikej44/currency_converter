@@ -84,6 +84,7 @@ body {
 
 .formFull__Fieldset {
     border-color: burlywood;
+    border-radius: 8px;
 }
 
 .formFull__input {
