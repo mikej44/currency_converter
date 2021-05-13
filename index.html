@@ -6,10 +6,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Konwerter walut</title>
-    <meta property="og:image" content="Images\Converter.png">
-    <link rel="icon" href="Images/icon converter.ico">
-    <link href="CSS/style.css" rel="stylesheet">
-    <script defer src="JS/script.js"></script>
+    <meta property="og:image" content="images/Converter.png">
+    <link rel="icon" href="images/icon converter.ico">
+    <link href="css/style.css" rel="stylesheet">
+    <script defer src="js/script.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
         integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
         crossorigin="anonymous" />
@@ -21,24 +21,24 @@
 <body>
     <div class="converter">
         <form class="form js-formRadio">
-            <fieldset class="form__Fieldset">
-                <legend class="form__Legend">Przelicz jedną walutę</legend>
+            <fieldset class="form__fieldset">
+                <legend class="form__legend">Przelicz jedną walutę</legend>
                 <p>
                     <label class="form__label">
-                        Podaj kwotę w PLN: <input class="js-form__RadioInput" type="number" step="0.01" min="0.01"
+                        Podaj kwotę w PLN: <input class="js-form__radioInput" type="number" step="0.01" min="0.01"
                             placeholder="Wprowadź wartość">
                     </label>
                 </p>
 
                 <ul class="form__radioList">
-                    <li class="form__Item">
-                        <input type="radio" name="currRadio" value="EUR" class="js-form__ItemEUR "> EUR
+                    <li class="form__item">
+                        <input type="radio" name="currRadio" value="EUR" class="js-form__item " required> EUR
                     </li>
-                    <li class="form__Item">
-                        <input type="radio" name="currRadio" value="USD" class="js-form__ItemUSD"> USD
+                    <li class="form__item">
+                        <input type="radio" name="currRadio" value="USD" class="js-form__item" required> USD
                     </li>
-                    <li class="form__Item">
-                        <input type="radio" name="currRadio" value="CHF" class="js-form__ItemCHF"> CHF
+                    <li class="form__item">
+                        <input type="radio" name="currRadio" value="CHF" class="js-form__item" required> CHF
                     </li>
                 </ul>
 
@@ -50,9 +50,9 @@
         </form>
 
         <form class="form js-formCheckbox">
-            <fieldset class="form__Fieldset">
+            <fieldset class="form__fieldset">
 
-                <legend class="form__Legend">Przelicz kilka walut</legend>
+                <legend class="form__legend">Przelicz kilka walut</legend>
                 <p>
                     <label class="form__label">
                         Podaj kwotę w PLN: <input class="js-form__CheckboxInput" type="number" step="0.01" min="0.01"
@@ -61,13 +61,13 @@
                 </p>
 
                 <ul>
-                    <li class="form__Item">
+                    <li class="form__item">
                         <input type="checkbox" name="currEUR" class="form__CheckboxEUR js-form__CheckEUR"> EUR
                     </li>
-                    <li class="form__Item">
+                    <li class="form__item">
                         <input type="checkbox" name="currUSD" class="form__CheckboxUSD js-form__CheckUSD"> USD
                     </li>
-                    <li class="form__Item">
+                    <li class="form__item">
                         <input type="checkbox" name="currCHF" class="form__CheckboxCHF js-form__CheckCHF"> CHF
                     </li>
                 </ul>
@@ -85,27 +85,27 @@
 
 
         <form class="formFull js-formFull">
-            <fieldset class="formFull__Fieldset">
-                <legend class="form__Legend">Przelicz z waluty na walutę</legend>
+            <fieldset class="formFull__fieldset">
+                <legend class="form__legend">Przelicz z waluty na walutę</legend>
 
                 <div class="formFull__section">
                         Jaką walutę posiadasz?
                 </div>
 
                 <ul class="form__radioList">
-                    <li class="form__Item">
-                        <input type="radio" name="currRadioIn" value="EUR" class="js-ItemIn" required> EUR
+                    <li class="form__item">
+                        <input type="radio" name="currRadioIn" value="EUR" class="js-itemIn" required> EUR
                     </li>
-                    <li class="form__Item">
-                        <input type="radio" name="currRadioIn" value="USD" class="js-ItemIn" required> USD
+                    <li class="form__item">
+                        <input type="radio" name="currRadioIn" value="USD" class="js-itemIn" required> USD
                     </li>
-                    <li class="form__Item">
-                        <input type="radio" name="currRadioIn" value="CHF" class="js-ItemIn" required> CHF
+                    <li class="form__item">
+                        <input type="radio" name="currRadioIn" value="CHF" class="js-itemIn" required> CHF
                     </li>
                 </ul>
                 <p>
                     <label class="form__label formFull__input">
-                        Podaj kwotę w wybranej walucie: <input class="js-formFull__RadioInput form__RadioInput"
+                        Podaj kwotę w wybranej walucie: <input class="js-formFull__radioInput form__radioInput"
                             type="number" step="0.01" min="0.01" placeholder="Wprowadź wartość">
                     </label>
                 </p>
@@ -115,14 +115,14 @@
             </div>
 
                 <ul class="form__radioList">
-                    <li class="form__Item">
-                        <input type="radio" name="currRadioOut" value="EUR" class="js-ItemOut" required> EUR
+                    <li class="form__item">
+                        <input type="radio" name="currRadioOut" value="EUR" class="js-itemOut" required> EUR
                     </li>
-                    <li class="form__Item">
-                        <input type="radio" name="currRadioOut" value="USD" class="js-ItemOut" required> USD
+                    <li class="form__item">
+                        <input type="radio" name="currRadioOut" value="USD" class="js-itemOut" required> USD
                     </li>
-                    <li class="form__Item">
-                        <input type="radio" name="currRadioOut" value="CHF" class="js-ItemOut" required> CHF
+                    <li class="form__item">
+                        <input type="radio" name="currRadioOut" value="CHF" class="js-itemOut" required> CHF
                     </li>
                 </ul>
 

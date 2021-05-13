@@ -23,7 +23,7 @@ body {
     padding: 7px;
 }
 
-.form__Item {
+.form__item {
     color: white;
     font-size: 23px;
     display: inline-block;
@@ -32,7 +32,7 @@ body {
     margin-left: 20px;
 }
 
-.form__Legend {
+.form__legend {
     color: white;
     padding: 10px;
     font-weight: 200;
@@ -48,7 +48,7 @@ body {
     margin-bottom: 42px;
 }
 
-.form__Fieldset {
+.form__fieldset {
     border: 3px solid rgb(37, 37, 37);
     border-radius: 8px;
 }
@@ -82,7 +82,7 @@ body {
     background-color: rgba(44, 39, 29, 0.815);
 }
 
-.formFull__Fieldset {
+.formFull__fieldset {
     border-color: burlywood;
     border-radius: 8px;
 }
