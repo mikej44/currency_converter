@@ -7,7 +7,8 @@ html {
 }
 
 body {
-    background-image: url(https://thumbs.dreamstime.com/z/dollars-background-high-resolution-texture-pattern-one-hundred-banknotes-money-usa-photography-united-states-dollar-u-s-177338082.jpg);
+    background-image: url("../images/background.jpg");
+    background-size: cover;
 }
 
 .converter {
@@ -45,7 +46,7 @@ body {
     color: rgba(235, 236, 235, 0.884);
     font-size: 20px;
     font-weight: bold;
-    margin-bottom: 42px;
+    margin-bottom: 26px;
 }
 
 .form__fieldset {
@@ -79,7 +80,10 @@ body {
 }
 
 .formFull {
+    margin: 0 auto;
+    max-width: 500px;
     background-color: rgba(44, 39, 29, 0.815);
+    padding: 7px;
 }
 
 .formFull__fieldset {
@@ -102,7 +106,7 @@ body {
     font-weight: bold;
     max-width: 300px;
     margin: 0 auto;
-    margin-top: 20px;
+    margin-top: 10px;
     display: flex;
     justify-content: center;
     background-color: rgba(27, 26, 26, 0.548);
